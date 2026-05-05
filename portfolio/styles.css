@@ -1,0 +1,933 @@
+/* ==================== ROOT & GENERAL STYLES ==================== */
+:root {
+    --primary-dark: #0f1b3c;
+    --secondary-dark: #1a2850;
+    --accent-green: #a4ff00;
+    --accent-cyan: #00d4ff;
+    --accent-pink: #ff1493;
+    --accent-blue: #4169e1;
+    --text-light: #ffffff;
+    --text-muted: #b0b8c1;
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: var(--primary-dark);
+    padding: 1.5rem 0;
+    z-index: 1000;
+    border-bottom: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.navbar-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.nav-link:hover {
+    color: var(--accent-green);
+}
+
+.nav-link.active {
+    border-bottom: 2px solid var(--accent-green);
+    color: var(--accent-green);
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+    background-color: var(--primary-dark);
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* Hero Content - Left Side */
+.hero-content {
+    animation: fadeInLeft 0.8s ease;
+}
+
+.hero-name {
+    font-size: 3.5rem;
+    font-style: italic;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-family: 'Brush Script MT', cursive;
+    font-weight: 400;
+}
+
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.title-primary {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--text-light);
+}
+
+.title-accent {
+    font-size: 1.5rem;
+    color: var(--accent-cyan);
+    font-weight: 400;
+}
+
+.hero-description {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+.hero-footer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.cta-button {
+    background-color: var(--accent-green);
+    color: var(--primary-dark);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(164, 255, 0, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(164, 255, 0, 0.5);
+    background-color: #91ff00;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-dark);
+    border-radius: 50%;
+    color: var(--accent-green);
+    text-decoration: none;
+    transition: var(--transition);
+    border: 2px solid var(--accent-green);
+}
+
+.social-icon:hover {
+    background-color: var(--accent-green);
+    color: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+/* Hero Right - Profile & Decorative Elements */
+.hero-right {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-image-container {
+    position: relative;
+    z-index: 10;
+    animation: fadeInRight 0.8s ease;
+}
+
+.profile-image {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 5px solid var(--accent-green);
+    object-fit: cover;
+    box-shadow: 0 10px 40px rgba(164, 255, 0, 0.2);
+    transition: var(--transition);
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+/* Decorative Shapes */
+.shape-vertical {
+    position: absolute;
+    width: 40px;
+    height: 280px;
+    background-color: var(--accent-green);
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+}
+
+.shape-cross-h,
+.shape-cross-v {
+    position: absolute;
+    background-color: var(--accent-green);
+    border-radius: 8px;
+}
+
+.shape-cross-h {
+    width: 80px;
+    height: 15px;
+    right: -30px;
+    bottom: 20%;
+}
+
+.shape-cross-v {
+    width: 15px;
+    height: 60px;
+    right: 10px;
+    top: 10%;
+}
+
+/* Side Social Icons */
+.side-social-icons {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 20;
+}
+
+.side-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--accent-green);
+    color: var(--primary-dark);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(164, 255, 0, 0.3);
+}
+
+.side-social:hover {
+    transform: translateX(10px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(164, 255, 0, 0.5);
+}
+
+.side-social.behance {
+    font-size: 0.9rem;
+}
+
+/* ==================== PROJECTS SECTION ==================== */
+.projects {
+    background-color: var(--primary-dark);
+    padding: 5rem 2rem;
+    position: relative;
+}
+
+.projects-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    color: var(--text-light);
+    letter-spacing: 2px;
+}
+
+.projects-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+/* Projects Text */
+.projects-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 2rem;
+}
+
+.projects-text h3 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.projects-text p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.text-accent {
+    color: var(--accent-cyan);
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.text-accent-large {
+    color: var(--accent-cyan);
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+
+.highlight-accent {
+    color: var(--accent-cyan);
+    font-weight: 600;
+}
+
+/* Triangle Decoration */
+.triangle-decoration {
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 0 solid transparent;
+    border-bottom: 35px solid var(--accent-green);
+    z-index: 5;
+}
+
+/* Project Cards */
+.projects-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.project-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(164, 255, 0, 0.2);
+}
+
+.card-dark {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+.card-light {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.card-orange {
+    grid-column: 2;
+    grid-row: 2;
+    width: 70%;
+    justify-self: center;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+/* ==================== HOBBIES SECTION ==================== */
+.hobbies {
+    background-color: var(--primary-dark);
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hobbies-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.hobbies-title {
+    color: var(--accent-pink);
+}
+
+.hobbies-collage {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin-top: 3rem;
+}
+
+/* Triangle Shapes */
+.triangle {
+    position: absolute;
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.triangle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Triangle 1 - Top Left (Pink) */
+.triangle-1 {
+    width: 250px;
+    height: 250px;
+    left: 5%;
+    top: 10%;
+    border: 5px solid var(--accent-pink);
+    transform: rotate(0deg);
+}
+
+/* Triangle 2 - Top Center (Cyan) */
+.triangle-2 {
+    width: 280px;
+    height: 280px;
+    left: 35%;
+    top: 5%;
+    border: 5px solid var(--accent-cyan);
+    transform: rotate(15deg);
+}
+
+/* Triangle 3 - Top Right (Blue) */
+.triangle-3 {
+    width: 240px;
+    height: 240px;
+    right: 8%;
+    top: 20%;
+    border: 5px solid var(--accent-blue);
+    transform: rotate(-10deg);
+}
+
+/* Triangle 4 - Bottom Left (White) */
+.triangle-4 {
+    width: 220px;
+    height: 220px;
+    left: 15%;
+    bottom: 10%;
+    border: 5px solid white;
+    transform: rotate(25deg);
+}
+
+/* Triangle 5 - Bottom Center (Green) */
+.triangle-5 {
+    width: 260px;
+    height: 260px;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%) rotate(-5deg);
+    border: 5px solid var(--accent-green);
+}
+
+/* Triangle 6 - Bottom Right (Blue Pattern) */
+.triangle-6 {
+    width: 280px;
+    height: 280px;
+    right: 5%;
+    bottom: 15%;
+    border: 5px solid var(--accent-cyan);
+    transform: rotate(35deg);
+}
+
+/* Accent Shapes */
+.accent-shape {
+    position: absolute;
+    z-index: 1;
+}
+
+.accent-orange {
+    width: 60px;
+    height: 60px;
+    background-color: #ff8c00;
+    border-radius: 50%;
+    left: 2%;
+    top: 35%;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+}
+
+.accent-blue {
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-blue);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    right: 3%;
+    top: 5%;
+}
+
+.accent-green {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--accent-green) 0%, #7fd700 100%);
+    border-radius: 50% 0;
+    right: 15%;
+    bottom: 20%;
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+    background-color: var(--secondary-dark);
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(164, 255, 0, 0.2);
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hero-right {
+        height: 350px;
+    }
+
+    .hero-name {
+        font-size: 2.8rem;
+    }
+
+    .hero-title {
+        gap: 0.3rem;
+    }
+
+    .title-primary {
+        font-size: 1.6rem;
+    }
+
+    .title-accent {
+        font-size: 1.2rem;
+    }
+
+    .projects-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .projects-text {
+        padding-left: 0;
+    }
+
+    .projects-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card-dark,
+    .card-light,
+    .card-orange {
+        grid-column: 1;
+        grid-row: auto;
+        width: 100%;
+    }
+
+    .triangle-decoration {
+        display: none;
+    }
+
+    .nav-menu {
+        gap: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+    }
+}
+
+/* Mobile (480px - 768px) */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 3rem 1.5rem;
+    }
+
+    .hero-name {
+        font-size: 2rem;
+    }
+
+    .title-primary {
+        font-size: 1.2rem;
+    }
+
+    .title-accent {
+        font-size: 1rem;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+
+    .hero-footer {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .hero-right {
+        height: 300px;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .shape-vertical {
+        width: 30px;
+        height: 200px;
+        right: -50px;
+    }
+
+    .side-social-icons {
+        right: -40px;
+        gap: 1rem;
+    }
+
+    .side-social {
+        width: 50px;
+        height: 50px;
+        font-size: 0.9rem;
+    }
+
+    .projects {
+        padding: 3rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .projects-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .text-accent {
+        font-size: 1.3rem;
+    }
+
+    .text-accent-large {
+        font-size: 1.6rem;
+    }
+
+    .hobbies {
+        padding: 3rem 1.5rem;
+    }
+
+    .hobbies-collage {
+        height: 400px;
+    }
+
+    .triangle {
+        border: 3px solid;
+    }
+
+    .triangle-1 {
+        width: 180px;
+        height: 180px;
+        left: 5%;
+        top: 5%;
+    }
+
+    .triangle-2 {
+        width: 200px;
+        height: 200px;
+        left: 28%;
+        top: 15%;
+    }
+
+    .triangle-3 {
+        width: 170px;
+        height: 170px;
+        right: 5%;
+        top: 30%;
+    }
+
+    .triangle-4 {
+        width: 150px;
+        height: 150px;
+        left: 10%;
+        bottom: 5%;
+    }
+
+    .triangle-5 {
+        width: 180px;
+        height: 180px;
+        left: 50%;
+        bottom: 10%;
+    }
+
+    .triangle-6 {
+        width: 200px;
+        height: 200px;
+        right: 2%;
+        bottom: 8%;
+    }
+
+    .accent-orange {
+        width: 40px;
+        height: 40px;
+    }
+
+    .accent-blue {
+        width: 35px;
+        height: 35px;
+    }
+
+    .accent-green {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Small Mobile (<480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .navbar {
+        padding: 1rem 0;
+    }
+
+    .navbar-container {
+        padding: 0 1rem;
+    }
+
+    .nav-menu {
+        gap: 0.5rem;
+        font-size: 0.7rem;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero-name {
+        font-size: 1.5rem;
+    }
+
+    .title-primary {
+        font-size: 1rem;
+    }
+
+    .title-accent {
+        font-size: 0.9rem;
+    }
+
+    .hero-description {
+        font-size: 0.85rem;
+    }
+
+    .cta-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    .hero-footer {
+        gap: 0.8rem;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .projects-text h3 {
+        font-size: 1.2rem;
+    }
+
+    .hobbies-collage {
+        height: 300px;
+    }
+
+    .triangle {
+        border: 2px solid;
+    }
+
+    .triangle-1,
+    .triangle-2,
+    .triangle-3,
+    .triangle-4,
+    .triangle-5,
+    .triangle-6 {
+        width: 120px;
+        height: 120px;
+    }
+
+    .triangle-1 {
+        left: 2%;
+        top: 5%;
+    }
+
+    .triangle-2 {
+        left: 32%;
+        top: 20%;
+    }
+
+    .triangle-3 {
+        right: 2%;
+        top: 35%;
+    }
+
+    .triangle-4 {
+        left: 8%;
+        bottom: 5%;
+    }
+
+    .triangle-5 {
+        left: 50%;
+        bottom: 12%;
+    }
+
+    .triangle-6 {
+        right: 1%;
+        bottom: 10%;
+    }
+}
